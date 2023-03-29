@@ -1,0 +1,36 @@
+<?php
+require_once "DB.php";
+$db = new DBHelper();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <form method="POST" action="">
+        <input placeholder="Password" name="password">
+        <button type="submit" name="submit">Submit</button>
+    </form>
+</body>
+
+</html>
+<?php
+if (isset($_POST['submit'])) {
+    $psd =  $_POST['password'];
+    $password = $db->PwdHash($psd);
+
+    echo $password;
+    
+
+ 
+}
+
+
+
+?>
