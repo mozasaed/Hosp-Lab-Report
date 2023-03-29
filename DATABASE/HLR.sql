@@ -35,7 +35,7 @@ CREATE TABLE `hlr_equipments` (
   `modifiedBy` int DEFAULT NULL,
   `modifiedDate` datetime DEFAULT NULL,
   PRIMARY KEY (`equipmentId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,38 @@ CREATE TABLE `hlr_equipments` (
 
 LOCK TABLES `hlr_equipments` WRITE;
 /*!40000 ALTER TABLE `hlr_equipments` DISABLE KEYS */;
+INSERT INTO `hlr_equipments` VALUES (1,'Generators','For electricity emergency',1,'2023-02-27','2023-04-08','',1,'2023-03-24 07:05:43',1,'2023-03-24 07:05:43'),(2,'Medicine','For providing to patients',1,'2023-02-26','2023-03-08','',1,'2023-03-24 07:07:47',1,'2023-03-24 07:07:47'),(3,'Defibrillator','None',1,'2023-03-06','2023-04-21','',1,'2023-03-24 07:14:14',1,'2023-03-24 07:14:14'),(4,'Patient monitors','None',1,'2023-03-04','2023-04-03','',1,'2023-03-24 07:15:09',1,'2023-03-24 07:15:09'),(5,'Mobile operating light','None',1,'2023-03-07','2023-04-07','',0,'2023-03-24 07:27:06',0,'2023-03-24 07:27:06');
 /*!40000 ALTER TABLE `hlr_equipments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hlr_equiptReport`
+--
+
+DROP TABLE IF EXISTS `hlr_equiptReport`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `hlr_equiptReport` (
+  `eqReptId` int NOT NULL AUTO_INCREMENT,
+  `hospId` int DEFAULT NULL,
+  `equipId` int DEFAULT NULL,
+  `statusId` int DEFAULT NULL,
+  `createdBy` int DEFAULT NULL,
+  `createdDate` datetime DEFAULT NULL,
+  `modifiedBy` int DEFAULT NULL,
+  `modifiedDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`eqReptId`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hlr_equiptReport`
+--
+
+LOCK TABLES `hlr_equiptReport` WRITE;
+/*!40000 ALTER TABLE `hlr_equiptReport` DISABLE KEYS */;
+INSERT INTO `hlr_equiptReport` VALUES (1,1,1,3,1,'2023-03-28 05:31:32',1,'2023-03-28 05:31:32'),(2,1,2,1,1,'2023-03-28 05:31:32',1,'2023-03-28 05:31:32'),(3,1,3,1,1,'2023-03-28 05:31:32',1,'2023-03-28 05:31:32'),(4,1,4,2,1,'2023-03-28 05:31:32',1,'2023-03-28 05:31:32'),(5,1,5,2,1,'2023-03-28 05:31:32',1,'2023-03-28 05:31:32'),(6,4,1,2,1,'2023-03-28 05:32:20',1,'2023-03-28 05:32:20'),(7,4,2,1,1,'2023-03-28 05:32:20',1,'2023-03-28 05:32:20'),(8,4,3,2,1,'2023-03-28 05:32:20',1,'2023-03-28 05:32:20'),(9,4,4,2,1,'2023-03-28 05:32:20',1,'2023-03-28 05:32:20'),(10,4,5,2,1,'2023-03-28 05:32:20',1,'2023-03-28 05:32:20');
+/*!40000 ALTER TABLE `hlr_equiptReport` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -64,7 +95,7 @@ CREATE TABLE `hlr_hospitals` (
   `modifiedBy` int DEFAULT NULL,
   `modifiedDate` datetime DEFAULT NULL,
   PRIMARY KEY (`hospId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +104,7 @@ CREATE TABLE `hlr_hospitals` (
 
 LOCK TABLES `hlr_hospitals` WRITE;
 /*!40000 ALTER TABLE `hlr_hospitals` DISABLE KEYS */;
-INSERT INTO `hlr_hospitals` VALUES (1,'DH-001','Chumbuni',1,0,'2023-03-23 13:08:12',0,'2023-03-23 13:08:12'),(2,'DH-002','Kinyasini',1,0,'2023-03-23 13:08:24',0,'2023-03-23 13:08:24');
+INSERT INTO `hlr_hospitals` VALUES (1,'DH-001','Chumbuni',1,0,'2023-03-23 13:08:12',0,'2023-03-23 13:08:12'),(2,'DH-002','Kinyasini',1,0,'2023-03-23 13:08:24',0,'2023-03-23 13:08:24'),(3,'DH-003','Mbuzini',1,1,'2023-03-24 07:23:59',0,'2023-03-24 07:23:59'),(4,'DH-004','Magogoni',1,0,'2023-03-24 07:24:10',0,'2023-03-24 07:24:10');
 /*!40000 ALTER TABLE `hlr_hospitals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +124,7 @@ CREATE TABLE `hlr_report_status` (
   `modifiedBy` int DEFAULT NULL,
   `modifiedDate` datetime DEFAULT NULL,
   PRIMARY KEY (`statusId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +133,7 @@ CREATE TABLE `hlr_report_status` (
 
 LOCK TABLES `hlr_report_status` WRITE;
 /*!40000 ALTER TABLE `hlr_report_status` DISABLE KEYS */;
-INSERT INTO `hlr_report_status` VALUES (1,'Pending',1,0,'2023-03-23 13:28:07',0,'2023-03-23 13:28:07');
+INSERT INTO `hlr_report_status` VALUES (1,'Pending',1,0,'2023-03-23 13:28:07',0,'2023-03-23 13:28:07'),(2,'Unknown',1,1,'2023-03-24 07:13:16',1,'2023-03-24 07:13:16'),(3,'Stopped',1,1,'2023-03-24 07:13:33',1,'2023-03-24 07:13:33');
 /*!40000 ALTER TABLE `hlr_report_status` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +165,7 @@ CREATE TABLE `hlr_users` (
 
 LOCK TABLES `hlr_users` WRITE;
 /*!40000 ALTER TABLE `hlr_users` DISABLE KEYS */;
-INSERT INTO `hlr_users` VALUES (1,'Moza','mozasaid511@gmail.com','admin','19e8e9ed53ab349cf6207f0d42fe1f8a79012342f338942ec',1,NULL,'2023-03-23 12:32:33',NULL,'2023-03-23 12:32:33');
+INSERT INTO `hlr_users` VALUES (1,'Moza','mozasaid511@gmail.com','admin','c51759f0b085cc8bcd0bce2ec2818849c13f57bd25366a5d9',1,NULL,'2023-03-23 12:32:33',NULL,'2023-03-23 12:32:33');
 /*!40000 ALTER TABLE `hlr_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -147,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-23 16:46:07
+-- Dump completed on 2023-03-29 13:36:37
